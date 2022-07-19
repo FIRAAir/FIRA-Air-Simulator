@@ -2,6 +2,13 @@
 FIRA Air Simulator
 
 ## Changelog
+### Update 1.1.0
+- Added main league track Collada file
+- Added main league track Blender source file
+- Added main league world file
+- Added main league launch file
+
+
 ### Update 1.0.2
 - Fixed rotating_link motion (Changed to Constant speed)
 - Fixed the slight movement of gate on the scene
@@ -36,7 +43,7 @@ catkin init
 # Add workspace to bashrc.
 echo 'source ~/catkin_ws/devel/setup.bash' >> ~/.bashrc
 cd src
-git clone https://github.com/Amxrmohammad/FIRA-Air-Simulator.git
+git clone https://github.com/FIRAAir/FIRA-Air-Simulator.git
 cd ..
 catkin_make
 source ~/.bashrc
