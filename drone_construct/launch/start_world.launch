@@ -1,0 +1,7 @@
+<launch>
+  <arg name="world_name" default="$(find drone_construct)/worlds/ardrone_igniteworld.world"/>
+
+  <!-- start gzserver and load the map -->
+  <node name="gazebo" pkg="sjtu_drone" type="start_gzserver" args="$(arg world_name)" respawn="false"/>
+
+</launch>

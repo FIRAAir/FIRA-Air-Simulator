@@ -1,0 +1,35 @@
+<launch>
+    <env name="GAZEBO_MODEL_PATH" value="$GAZEBO_MODEL_PATH:$(find sjtu_drone)/models"/>
+    <env name="GAZEBO_PLUGIN_PATH" value="$GAZEBO_PLUGIN_PATH:$(find sjtu_drone)/plugins"/> <!--add custom plugins for drone to gazebo plugin path-->
+    <env name="GAZEBO_RESOURCE_PATH" value="$GAZEBO_RESOURCE_PATH:$(find sjtu_drone)/meshes"/>
+
+    <arg name="sdf_robot_file" value="$(find sjtu_drone)/models/sjtu_drone/sjtu_drone.sdf"/>
+    <arg name="robot_name" value="sjtu_drone"/>
+    <arg name="x" default="0.0" />
+    <arg name="y" default="0.0" />
+    <arg name="z" default="0.0" />
+    <arg name="roll" default="0.0"/>
+    <arg name="pitch" default="0.0"/>
+    <arg name="yaw" default="4.71"/>
+   
+    <node name="$(arg robot_name)_spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-file $(arg sdf_robot_file) -sdf 
+        -x $(arg x) 
+        -y $(arg y) 
+        -z $(arg z)  
+        -R $(arg roll) 
+        -P $(arg pitch) 
+        -Y $(arg yaw) 
+        -model $(arg robot_name)"/>
+
+      <arg name="g_x" default="-1"/>  
+      <arg name="g_y" default="-3"/>
+      <arg name="g_z" default="0"/>
+      <!-- <node
+        name="tf_footprint_base"
+        pkg="tf"
+        type="static_transform_publisher"
+        args="0 0 0 0 0 0 base_link base_footprint 40" /> -->
+   
+   
+</launch>
