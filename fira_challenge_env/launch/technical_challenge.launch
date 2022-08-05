@@ -1,5 +1,5 @@
 <launch>
-    <env name="GAZEBO_MODEL_PATH" value="$GAZEBO_MODEL_PATH:$(find fira_challenge_env)/models"/>
+    <!-- <env name="GAZEBO_MODEL_PATH" value="$GAZEBO_MODEL_PATH:$(find fira_challenge_env)/models"/> -->
 
     <arg name="world_name" default="$(find fira_challenge_env)/worlds/main_league.world"/>
     <arg name="paused" value="false"/>
@@ -13,9 +13,9 @@
       <arg name="verbose" value="$(arg verbose)"/>
       <arg name="gui" value="$(arg gui)"/>
     </include>
-    <include file="$(find sjtu_drone)/launch/start.launch"/>
+    <include file="$(find sjtu_drone)/launch/main.launch"/>
     
-    <!-- <include file="$(find gate_system)/launch/gazebo.launch"/> -->
+    <include file="$(find gate_system)/launch/gazebo.launch"/>
 
     <!-- <node name="randomizer" pkg="gate_system" type="randomizer.py" output="screen" launch-prefix="bash -c 'sleep 3; $0 $@' "/> -->
     
