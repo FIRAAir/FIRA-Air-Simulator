@@ -2,6 +2,13 @@
 FIRA Air Simulator
 
 ## Changelog
+### Update 1.1.1
+- Fixed the color of the frame for the gates (Changed to magenta)
+- Modified track Blender file
+- Fixed track Blender file (Missing DNA Block)
+- Modified the main league scene lighting
+- Modified run.sh bash file
+
 ### Update 1.1.0
 - Added main league track Collada file
 - Added main league track Blender source file
